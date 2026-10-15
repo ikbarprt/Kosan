@@ -24,7 +24,7 @@ if (isset($_POST['simpan'])) {
             $nama, $ktp, $pekerjaan, $hp, $kamar, $kd_nama, $kd_hubungan, $kd_hp);
         mysqli_stmt_execute($stmt);
 
-        header("Location: index.php");
+        header("Location: penghuni_kos.php");
         exit;
     } catch (mysqli_sql_exception $e) {
         if ($e->getCode() == 1062) {
@@ -49,7 +49,7 @@ if (isset($_POST['simpan'])) {
     <p style="color:red;"><?= htmlspecialchars($error) ?></p>
   <?php endif; ?>
 
-  <form method="post" action="penghuni_kos.php">
+  <form method="post">
     <h3>Data Pribadi</h3>
     <div class="form-group">
       <label for="nama">Nama Lengkap</label>
